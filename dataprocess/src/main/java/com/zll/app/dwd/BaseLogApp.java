@@ -36,6 +36,7 @@ public class BaseLogApp {
     public static void main(String[] args) throws Exception {
 //        注册环境
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+
         env.setParallelism(1);
         env.setStateBackend(new FsStateBackend("hdfs://hadoop102:9820/gmall/realtime/baselog"));
         System.setProperty("HADOOP_USER_NAME", "zll");
